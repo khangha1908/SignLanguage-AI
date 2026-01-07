@@ -51,7 +51,7 @@ const Detect = () => {
       const recognizer = await GestureRecognizer.createFromOptions(vision, {
         baseOptions: {
           modelAssetPath:
-            "/Trained Model/sign_language_recognizer_25-04-2023.task",
+            "/Trained Model/sign_language_recognizer.task",
         },
         numHands: 2,
         runningMode,
@@ -172,6 +172,9 @@ const Detect = () => {
       const resultsArr = [];
 
       console.log(`Bắt đầu xử lý video: ${totalFrames} frames`);
+
+      // Chuyển về chế độ IMAGE để xử lý từng frame
+      gestureRecognizer.setOptions({ runningMode: "IMAGE" });
 
       for (let i = 0; i < totalFrames; i++) {
         video.currentTime = i / fps;

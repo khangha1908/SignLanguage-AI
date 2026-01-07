@@ -1,5 +1,3 @@
--- SQL script to create the database for Sign Language Recognition App
--- Run this in MySQL Workbench or any MySQL client
 
 -- Create the database
 CREATE DATABASE IF NOT EXISTS sign_language_db;
